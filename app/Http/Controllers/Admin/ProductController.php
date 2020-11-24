@@ -47,7 +47,7 @@ class ProductController extends Controller
             "product_name" => $request->get("name"),
             "product_price" => $request->get("price"),
             "product_image" => $request->get("image"),
-            "product_description" => $request->get("desc"),
+            "product_discription" => $request->get("desc"),
             "product_id" => $request->get("category"),
         ]);
 
@@ -94,10 +94,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-    
         $product->product_name = $request->get("name");
         $product->product_price = $request->get("price");
-        $product->product_description = $request->get("desc");
+        $product->product_discription = $request->get("desc");
         $product->product_image = $request->get("image");
         $product->product_id = $request->get("category");
         $product->save();
